@@ -1,12 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: Inter;
 }
 
-a {
+.nav-header {
+  background-color: #BEBEBE;
+}
+.nav-header .logo a {
   text-decoration: none;
+  color: #1E1E1E;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.nav-header .container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-header .container .nav-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.nav-header .container .nav-btn a {
+  color: 930FF;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.container .my-profile {
+  height: 100vh;
+  background-color: aquamarine;
+}
+.container .my-profile h1 {
+  text-align: center;
+}
+.container .my-profile .profile-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .my-profile .profile-details .profile-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.container .my-profile .profile-details .btn {
+  display: flex;
+  justify-content: space-around;
 }
 
 body {

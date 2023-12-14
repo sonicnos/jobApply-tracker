@@ -6,14 +6,16 @@
   <link rel="stylesheet" href="sass/main.css">
 </head>
 <body>
-  <nav>
-    <h1><a href="/">logo</a></h1>
-    <ul>
-      <% if (user) { %>
-      <li>Welcome, <%= user.firstName %> <%= user.lastName %></li>
-      <li><a href="/myprofile">My profile</a></li>
-      <li><a href="/logout">log out</a></li>
-      <% } %>
-    </ul>
+  <nav class="nav-header">
+    <div class="container">
+      <h1 class="logo"><a href="/">logo</a></h1>
+      <ul class="nav-btn">
+        <% if (user) { %>
+        <li><%= user.firstName %> <%= user.lastName %></li>
+        <li><a href="/myprofile">My profile</a></li>
+        <li><a href="/logout">log out</a></li>
+        <% } %>
+      </ul>
+    </div>
   </nav>
   

@@ -1,7 +1,23 @@
 <%- include('partials/header'); -%>
-<h1>My profile</h1>
-<a href="/">Back to dashboard </a>
-<p>Full name: <%= user.firstName %> <%= user.lastName %></p>
-<p>Email: <%= user.email %></p>
-<p>GitHub: <%= user.github %></p>
+<div class="container">
+  <a href="/">Back to dashboard </a>
+  <div class="my-profile">
+    <h1>My profile</h1>
+    <div class="profile-details">
+      <img src="/photo-test.png" alt="photo test">
+      <div class="details">
+        <div class="profile-details-container">
+          <p>Full name: <%= user.firstName %> <%= user.lastName %></p>
+          <p>Email: <%= user.email %></p>
+          <p>GitHub: <%= user.github %></p>
+        </div>
+        <div class="btn">
+          <button>btn1</button>
+          <button>btn2</button>
+          <button>btn3</button>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
 <%- include('partials/footer'); -%>

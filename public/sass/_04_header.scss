@@ -1,0 +1,34 @@
+@import '02_variable.scss';
+
+
+.nav-header {
+  background-color: $greyDrak;
+
+  .logo{
+
+    a{
+      text-decoration: none;
+      color: $black;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+  }
+  .container{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .nav-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      
+      a {
+        color: $link;
+      }
+    }
+  }
+
+}
