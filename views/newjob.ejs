@@ -1,36 +1,39 @@
 <%- include('partials/header'); -%>
 
-<ul class="recipes">
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Banana Boost</h4>
-    <p>Banana, Vanilla ice cream, Milk</p>
-  </li>
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Tropical Twist</h4>
-    <p>Peach, Pinapple, Apple juice</p>
-  </li>
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Protein Packer</h4>
-    <p>Oats, Peanut butter, Milk, Banana, Blueberries</p>
-  </li>
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Banana Boost</h4>
-    <p>Banana, Vanilla ice cream, Milk</p>
-  </li>
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Tropical Twist</h4>
-    <p>Peach, Pinapple, Apple juice</p>
-  </li>
-  <li class="recipe">
-    <img src="/smoothie.png" alt="smoothie recipe icon">
-    <h4>Protein Packer</h4>
-    <p>Oats, Peanut butter, Milk, Banana, Blueberries</p>
-  </li>
-</ul>
+<form>
+  <h1>Create job</h1>
+  <label for="job-title">Job title</label>
+  <input type="text" name="job-title" required/>
+  <label for="website">Website</label>
+  <input type="text" name="website" required/>
+</form>
 
+<h2>Employer’s contact</h2>
+
+<form>
+  <label for="name">Name</label>
+  <input type="text" name="name" required/>
+  <label for="email-of-contact">Email of contact</label>
+  <input type="text" name="email-of-contact" required/>
+  <label for="phone">Phone</label>
+  <input type="text" name="phone" required/> 
+  <label for="address">Address</label>
+  <input type="text" name="address" required/> 
+  <p>Origin</p>
+  <select>
+    <option value="">Candidature spontanée</option>
+    <option value="">Job offer.</option>
+  </select>
+  <p>Status</p>
+  <select>
+    <option value="">Interested</option>
+    <option value="">CV sent</option>
+    <option value="">Negative</option>
+    <option value="">Interview</option>
+  </select>
+  <label for="comments">Comments</label>
+  <textarea name="" id="comments" cols="30" rows="10"></textarea>
+</form>
+
+<button>Save</button>
 <%- include('partials/footer'); -%>

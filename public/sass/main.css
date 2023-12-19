@@ -32,33 +32,105 @@
   color: 930FF;
 }
 
-.container {
-  max-width: 80%;
+.login-form {
+  max-width: 270px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
-.container .my-profile {
+.login-form .email-login,
+.login-form .password-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-form .btn-login button {
+  background-color: #AE1818;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 74px;
+  height: 21px;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  max-width: 270px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.register-form .first-last-name {
+  display: flex;
+  gap: 10px;
+}
+.register-form .first-last-name .firstname,
+.register-form .first-last-name .lastname {
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+}
+.register-form .upload {
+  display: flex;
+  gap: 10px;
+}
+.register-form .upload .profile-picture,
+.register-form .upload .cv {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+}
+.register-form button {
+  background-color: #AE1818;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 74px;
+  height: 21px;
+  margin-bottom: 20px;
+}
+
+.my-profile {
   height: 100vh;
   background-color: aquamarine;
 }
-.container .my-profile h1 {
-  text-align: center;
-}
-.container .my-profile .profile-details {
+.my-profile .profile-details {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .my-profile .profile-details .profile-details-container {
+.my-profile .profile-details .profile-details-container {
   display: flex;
   flex-direction: column;
 }
-.container .my-profile .profile-details .btn {
+.my-profile .profile-details .btn {
   display: flex;
   justify-content: space-around;
 }
 
 body {
   height: 100vh;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.container .login-title,
+.container .my-profile-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .error {

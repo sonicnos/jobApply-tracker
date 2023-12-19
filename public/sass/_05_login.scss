@@ -1,0 +1,21 @@
+@import '02_variable', '03_mixin';
+
+.login-form {
+    max-width: 270px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .email-login,
+    .password-login {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-login{
+        button{
+            @include buttonRed;
+        }
+    }
+}

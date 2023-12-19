@@ -1,15 +1,8 @@
-@import '02_variable.scss';
-.container {
-  max-width: 80%;
-  margin: 0 auto;
-  
+@import '02_variable';
   .my-profile {
     height: 100vh;
     background-color: aquamarine;
 
-    h1 {
-      text-align: center;
-    }
     .profile-details {
       display: flex;
       justify-content: center;
@@ -26,4 +19,4 @@
       }
     }
   }
-}
+

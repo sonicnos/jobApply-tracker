@@ -1,17 +1,29 @@
 <%- include('partials/header'); -%>
+<div class="container">
+    <h1 class="login-title">Log in</h1>
+    <form class="login-form">
+        <div class="email-login">
+            <label for="email">Email</label>
+            <input type="text" name="email" required/>
+            <div class="email error"></div>
+        </div>
 
-<form>
-    <h2>Log in</h2>
-    <label for="email">Email</label>
-    <input type="text" name="email" required/>
-    <div class="email error"></div>
-    <label for="password">Password</label>
-    <input type="password" name="password" required/>
-    <div class="password error"></div>
-    <button>Log in</button>
-</form>
+        <div class="password-login">
+            <label for="password">Password</label>
+            <input type="password" name="password" required/>
+            <div class="password error"></div>    
+        </div>
+        <div class="btn-login">
+            <button>Log in</button>
+        </div>
+        <p>Not registered yet ? <a href="/register">Register</a></p>
+    </form>
+</div>
 
-<p>Not registered yet ? <a href="/register">Register</a></p>
+
+
+
+
 
 <script>
     const form = document.querySelector('form');

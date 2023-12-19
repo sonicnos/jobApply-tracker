@@ -1,0 +1,14 @@
+@mixin buttonRed {
+    background-color: $btn-color-red;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 74px;
+    height: 21px;
+    margin-bottom: 20px;
+}
