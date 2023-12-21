@@ -1,0 +1,20 @@
+@import '02_variable', '03_mixin';
+
+.new-job-form {
+  max-width: 270px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  input,
+  select {
+    margin-bottom: 10px;
+  }
+
+
+  button {
+    margin-top: 10px;
+    @include buttonRed;
+  }
+}

@@ -1,39 +1,85 @@
 <%- include('partials/header'); -%>
 
-<form>
+<form class="new-job-form">
   <h1>Create job</h1>
-  <label for="job-title">Job title</label>
-  <input type="text" name="job-title" required/>
+  <label for="jobTitle">Job title</label>
+  <input type="text" name="jobTitle" required/>
   <label for="website">Website</label>
   <input type="text" name="website" required/>
-</form>
-
-<h2>Employer’s contact</h2>
-
-<form>
-  <label for="name">Name</label>
-  <input type="text" name="name" required/>
-  <label for="email-of-contact">Email of contact</label>
-  <input type="text" name="email-of-contact" required/>
+  <h2>Employer’s contact</h2>
+  <label for="contactName">Name</label>
+  <input type="text" name="contactName" required/>
+  <label for="contactEmail">Email of contact</label>
+  <input type="text" name="contactEmail" required/>
   <label for="phone">Phone</label>
   <input type="text" name="phone" required/> 
   <label for="address">Address</label>
   <input type="text" name="address" required/> 
   <p>Origin</p>
-  <select>
-    <option value="">Candidature spontanée</option>
-    <option value="">Job offer.</option>
+  <select class="origin">
+    <option value="cs">Candidature spontanée</option>
+    <option value="jo">Job offer.</option>
   </select>
   <p>Status</p>
-  <select>
-    <option value="">Interested</option>
-    <option value="">CV sent</option>
-    <option value="">Negative</option>
-    <option value="">Interview</option>
+  <select class="status">
+    <option value="interested">Interested</option>
+    <option value="cvSent">CV sent</option>
+    <option value="negative">Negative</option>
+    <option value="interview">Interview</option>
   </select>
   <label for="comments">Comments</label>
-  <textarea name="" id="comments" cols="30" rows="10"></textarea>
+  <textarea name="comments" cols="30" rows="10"></textarea>
+  <button>Save</button>
 </form>
 
-<button>Save</button>
+
 <%- include('partials/footer'); -%>
+
+<script>
+  const form = document.querySelector('form');
+  const originSection = document.querySelector('.origin');
+  const statusSection = document.querySelector('.status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    //get values
+    const jobTitle = form.jobTitle.value;
+    const website = form.website.value;
+    const contactName = form.contactName.value;
+    const contactEmail = form.contactEmail.value;
+    const contactPhone = form.phone.value;
+    const contactAddress = form.address.value;
+    const origin = originSection.value;
+    const status = statusSection.value;
+    const comments = form.comments.value;
+
+
+    try {
+        const res = await fetch('/newjob', {
+            method: 'POST',
+            body: JSON.stringify({ title: jobTitle.value,
+                    website: website.value,
+                    contact: {
+                        name: contactName.value,
+                        email: contactEmail.value,
+                        phone: contactPhone.value,
+                        adress: contactAddress.value
+                    },
+                    origin: origin.value,
+                    status: status.value,
+                    comments: comments.value}),
+            headers: { 'Content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+        
+        if (data.user) {
+            location.assign('/');
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+    });
+</script>

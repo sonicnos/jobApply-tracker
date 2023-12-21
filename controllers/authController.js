@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const NewJob = require('../models/newJob');
 const jwt = require('jsonwebtoken');
 
 //handle errors
@@ -48,6 +49,10 @@ module.exports.login_get = (req, res) => {
     res.render("login");
 }
 
+module.exports.newjob_get = (req, res) => {
+    res.render("newJob");
+}
+
 module.exports.register_post =  async (req, res) => {
     const {firstName, lastName, email, github, password} = req.body;
 
@@ -73,6 +78,43 @@ module.exports.login_post = async (req, res) => {
     } catch (err) {
         const errors = handleErrors(err)
         res.status(400).json({ errors });
+    }
+}
+
+module.exports.newjob_post = async (req, res) => {
+    const token = req.cookies.jwt
+    console.log(req.body);
+    const newJobData = req.body
+    if (token) {
+        try {
+            jwt.verify(token, 'crazy secret secret', async (err, decodedToken) => {
+                if (err) {
+                    console.log(err.message);
+                    } else {
+                        try {
+                            let user = await User.findById(decodedToken.id)
+                            const newJob = new newJob({...newJobData, user : user.id})
+                            await newJob.save()
+                            user.newJobs.push(newJob._id)
+                            await user.save()
+                            res.status(201).json({ newJob: newJob._id });
+                        } catch (error) {
+                            console.log(`An error occured when attempting to find the user by his ID, or when creating and saving the newJob, or when saving the id of the newJob in the user, or when saving the user : ${error}`);
+                            const errors = handleErrors(error);
+                            console.log("errors: ", errors);
+                            res.status(400).json({ errors });
+
+                        }
+                        
+                    }
+                })
+        } catch (error) {
+            console.log("JWT token not valid : " + error);
+            res.redirect('/login')
+        }
+        
+    } else {
+        res.redirect('/login')
     }
 }
 

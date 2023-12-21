@@ -118,6 +118,33 @@
   justify-content: space-around;
 }
 
+.new-job-form {
+  max-width: 270px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.new-job-form input,
+.new-job-form select {
+  margin-bottom: 10px;
+}
+.new-job-form button {
+  margin-top: 10px;
+  background-color: #AE1818;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 74px;
+  height: 21px;
+  margin-bottom: 20px;
+}
+
 body {
   height: 100vh;
 }

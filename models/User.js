@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { isEmail } = require('validator')
+const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please enter an password'],
     minLength: [6, 'Minimun password length is 6 characters']
+  },
+  NewJob: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "NewJob",
   }
 });
 
